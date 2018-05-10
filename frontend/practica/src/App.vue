@@ -1,13 +1,32 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <div class="container">
+      <pp-header></pp-header>
+    </div>
+
+    <div class="container">
+      <pp-home></pp-home>
+    </div>
+
+    <div class="container">
+      <pp-footer></pp-footer>
+    </div>
   </div>
 </template>
 
 <script>
+
+import Header from './components/Header'
+import Home from './components/Home'
+import Footer from './components/Footer.vue'
+
+
 export default {
-  name: 'App'
+  components: {
+    ppHeader: Header,
+    ppHome: Home,
+    ppFooter: Footer
+  }
 }
 </script>
 
