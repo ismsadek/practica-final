@@ -1,27 +1,6 @@
 <template>
-	<footer class="row">
-		<div class="col-md-12">
-			<nav class="navbar navbar-toggleable-md navbar-light">
-				<ul class="nav">
-					<li>
-						<a class="nav-link" href="">suscripciones por RRS</a>
-					</li>
-					<li>
-						<a class="nav-link" href="">Ayuda</a>
-					</li>
-					<li>
-						<a class="nav-link" href="">+ menéame</a>
-					</li>
-					<li>				
-						<a class="nav-link" href="">estadísticas.</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
-
-		<div class="col-md-12">
-			<nav class="navbar navbar-toggleable-md navbar-light">
-				<h3 href="/" class="navbar-brand">Menéame</h3>
+		<footer class="row general-footer">
+			<nav class="navbar navbar-toggleable-md">
 				<ul class="nav">
 					<li>
 						<a class="nav-link" href="">Condiciones legales</a>
@@ -34,16 +13,18 @@
 					</li>
 				</ul>
 			</nav>
-		</div>
-	</footer>
+		</footer>
 </template>
 
 <style>
-	header {
-		margin-top: 20px;
-	}
+.general-footer {
+	clear: both;
+	margin: 50px 20px 10px 13px;
+    padding: 0 1em 0 110px;
+    background: url(https://mnmstatic.net/v_143/img/mnm/logos-common.png) no-repeat 0 -25px;
+}
 
-	.nav-brand {
-		font-size: 1.5em;
-	}
+.li {
+	font-size: 85%;
+}
 </style>
