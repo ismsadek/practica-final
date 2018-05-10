@@ -7,6 +7,11 @@
     <div class="container">
       <pp-home></pp-home>
     </div>
+    
+<!--    <div class="container">
+      <pp-new-article></pp-new-article>
+    </div>
+-->
 
     <div class="container">
       <pp-footer></pp-footer>
@@ -20,12 +25,16 @@ import Header from './components/Header'
 import Home from './components/Home'
 import Footer from './components/Footer.vue'
 
+// import NewArticle from './components/NewArticle.vue'
+
 
 export default {
   components: {
     ppHeader: Header,
     ppHome: Home,
-    ppFooter: Footer
+    ppFooter: Footer,
+
+//    ppNewArticle: NewArticle
   }
 }
 </script>
