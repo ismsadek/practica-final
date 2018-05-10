@@ -1,12 +1,18 @@
 <template>
   <div >
-    <h1>hola</h1>
+    <pp-comments></pp-comments>
   </div>
 </template>
 
 <script>
 
+import Comments from './Comment'
 
+export default {
+  components: {
+    ppComments: Comments,
+  }
+}
 
 </script>
 
