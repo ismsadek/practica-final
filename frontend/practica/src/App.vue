@@ -7,10 +7,6 @@
     <div class="container">
       <pp-home></pp-home>
     </div>
-    
- <!--    <div class="container">
-      <pp-new-article></pp-new-article>
-    </div> -->
 
     <div class="container">
       <pp-portada></pp-portada>
@@ -39,7 +35,6 @@ import Footer from './components/Footer.vue'
 import Portada from './components/portada.vue'
 import Nuevas from './components/Nuevas.vue'
 import Articulos from './components/Articulos.vue'
-import NewArticle from './components/NewArticle.vue'
 
 
 export default {
@@ -50,7 +45,6 @@ export default {
     ppPortada: Portada,
     ppNuevas: Nuevas,
     ppArticulos: Articulos,
-    ppNewArticle: NewArticle,
   }
 }
 </script>
