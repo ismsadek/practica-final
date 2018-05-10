@@ -32,7 +32,7 @@ const articleSchema = mongoose.Schema({
       type: Number,
       required: true
   },
-  
+
 });
 
 // definicion de esquema del articulos nuevos
@@ -50,7 +50,11 @@ const newsSchema = mongoose.Schema({
     required: true
   },
   topic: {
+// <<<<<<< HEAD
     type: String,
+=======
+    type: Number,
+// >>>>>>> 53b031f2ef94aea6c0c68135e38614d8dbfd60fb
     required: true
   },
   timeStamp: {
@@ -62,7 +66,7 @@ const newsSchema = mongoose.Schema({
       required: true
   },
 
-  
+
 });
 
 // definicion del modelo de dato del articulo
@@ -71,9 +75,9 @@ let articleModel = mongoose.model('Article', articleSchema);
 // definicion del modelo de dato de nuevos articulos
 let newsModel = mongoose.model('News', newsSchema);
 
-// //insert data
-// function insertData(iText, iUser, iId){
-// let user = new userModel({text: iText, user: iUser, id: iId});
+// // //insert data
+// function insertData(iAuthor, iTitle, iContent, ){
+// let user = new userModel({author: iAuthor, title: ititle, content: icontent});
 // user.save(function(err) {
 //   if (err) throw err;
 //   console.log('Nuevo usuario guardado.');
@@ -88,6 +92,7 @@ let newsModel = mongoose.model('News', newsSchema);
 
 
 module.exports = {
+// <<<<<<< HEAD
    showData: function(){  // Retrieve data
      articleModel.find(function (err, result) {
        if (err) return console.error(err);
@@ -118,6 +123,14 @@ module.exports = {
     });
   }
  
+
+   newArticle: function(iAuthor, iTitle, iContent, iTopic, iTimeStamp){  // Retrieve data
+     let user = new articleModel({author: iAuthor, title: ititle, content: icontent, topic:iTopic, timeStamp: iTimeStamp});
+     user.save(function(err) {
+       if (err) throw err;
+       console.log('Nuevo usuario guardado.');
+     });
+   },
 }
 
 
@@ -131,5 +144,16 @@ module.exports = {
 
 // var id = '5af32a5bb6cdba0cfb7cb315'
 
+// <<<<<<< HEAD
 
 
+// =======
+// // function removeData(id){
+// //   userModel.findByIdAndRemove(id, function(err, result) {
+// //     if (err) throw err;
+// //     if(result){
+// //       console.log("Usuario eliminado.");
+// //   }
+// //   });
+// // }
+// >>>>>>> 53b031f2ef94aea6c0c68135e38614d8dbfd60fb
