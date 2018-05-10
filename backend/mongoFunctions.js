@@ -24,15 +24,15 @@ const articleSchema = mongoose.Schema({
     type: String,
     required: true
   },
-  id: {
-    type: Number,
+  topic: {
+    type: String,
     required: true
   },
   timeStamp: {
       type: Number,
       required: true
   },
-  
+
 });
 
 // definicion de esquema del articulos nuevos
@@ -49,7 +49,7 @@ const newsSchema = mongoose.Schema({
     type: String,
     required: true
   },
-  id: {
+  topic: {
     type: Number,
     required: true
   },
@@ -62,7 +62,7 @@ const newsSchema = mongoose.Schema({
       required: true
   },
 
-  
+
 });
 
 // definicion del modelo de dato del articulo
@@ -71,9 +71,9 @@ let articleModel = mongoose.model('Article', articleSchema);
 // definicion del modelo de dato de nuevos articulos
 let newsModel = mongoose.model('News', newsSchema);
 
-// //insert data
-// function insertData(iText, iUser, iId){
-// let user = new userModel({text: iText, user: iUser, id: iId});
+// // //insert data
+// function insertData(iAuthor, iTitle, iContent, ){
+// let user = new userModel({author: iAuthor, title: ititle, content: icontent});
 // user.save(function(err) {
 //   if (err) throw err;
 //   console.log('Nuevo usuario guardado.');
@@ -88,27 +88,14 @@ let newsModel = mongoose.model('News', newsSchema);
 
 
 module.exports = {
-   showData: function(){  // Retrieve data
-     articleModel.find(function (err, result) {
-       if (err) return console.error(err);
-       if(result){
-         console.log(result);
-     }
+   newArticle: function(iAuthor, iTitle, iContent, iTopic, iTimeStamp){  // Retrieve data
+     let user = new articleModel({author: iAuthor, title: ititle, content: icontent, topic:iTopic, timeStamp: iTimeStamp});
+     user.save(function(err) {
+       if (err) throw err;
+       console.log('Nuevo usuario guardado.');
      });
    },
-   findDataById: function (id, author, title, content, timeStamp){ //Modify the data
-     articleModel.findById(id, function(err, result) {
-       if (err) throw err;
-       if(result){
-         result.content = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum cumque ex, dolor facilis! Velit, non aliquid dolor dolorum iusto sapiente dolore voluptas nulla hic, tempora quam assumenda perferendis ducimus distinctio?";
-         result.author = "Ismael";
-         result.id = 2;
-         result.timeStamp = ;
-         result.save();
-       }
-     });
-   }
- 
+
 }
 
 
@@ -123,11 +110,11 @@ module.exports = {
 // var id = '5af32a5bb6cdba0cfb7cb315'
 //
 
-function removeData(id){
-  userModel.findByIdAndRemove(id, function(err, result) {
-    if (err) throw err;
-    if(result){
-      console.log("Usuario eliminado.");
-  }
-  });
-}
+// function removeData(id){
+//   userModel.findByIdAndRemove(id, function(err, result) {
+//     if (err) throw err;
+//     if(result){
+//       console.log("Usuario eliminado.");
+//   }
+//   });
+// }
