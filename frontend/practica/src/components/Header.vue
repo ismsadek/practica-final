@@ -1,5 +1,5 @@
 <template>
-	<div class="container-fluid"
+	<div class="container-fluid">
 		<div class="container">
 			<div class="row header-top">
 				<div class="navbar col-sm-6 col-md-3">
@@ -8,7 +8,6 @@
 					<a href="/">edición general</a>
 				</div>
 				<div class="navbar col-md-6 col-sm-3">
-
 					<img src="" alt="">		
 					<a href="">login</a>
 					<a href="">registrarse</a>
@@ -18,11 +17,11 @@
 		<div class="container">
 			<div class="row header-bot">
 				<div class="navbar col-sm-11 col-md-7">
-					<button><a href="">PUBLICAR</a></button>
-					<button><a href="http://random-shibe.surge.sh/">CREAR ARTÍCULO</a></button>
-					<a href="">PORTADA</a>
-					<a href="">NUEVAS</a>
-					<a href="">ARTÍCULOS</a>
+					<button><a href="http://random-shibe.surge.sh/">PUBLICAR</a></button>
+					<button><a href="./components/NewArticle.vue">CREAR ARTÍCULO</a></button>
+					<a href="./components/portada.vue">PORTADA</a>
+					<a href="./components/Nuevas.vue">NUEVAS</a>
+					<a href="./components/Articulos.vue">ARTÍCULOS</a>
 				</div>
 				<div class="navbar col-md-5 col-sm-1">
 					<a href="">FISGONA</a>

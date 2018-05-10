@@ -8,20 +8,21 @@
       <pp-home></pp-home>
     </div>
     
-    <div class="container">
+ <!--    <div class="container">
       <pp-new-article></pp-new-article>
-    </div>
+    </div> -->
 
     <div class="container">
       <pp-portada></pp-portada>
     </div>
+
     <div class="container">
       <pp-nuevas></pp-nuevas>
     </div>
+
     <div class="container">
       <pp-articulos></pp-articulos>
     </div>
-
 
     <div class="container">
       <pp-footer></pp-footer>
@@ -38,8 +39,7 @@ import Footer from './components/Footer.vue'
 import Portada from './components/portada.vue'
 import Nuevas from './components/Nuevas.vue'
 import Articulos from './components/Articulos.vue'
-
-// import NewArticle from './components/NewArticle.vue'
+import NewArticle from './components/NewArticle.vue'
 
 
 export default {
@@ -49,7 +49,8 @@ export default {
     ppFooter: Footer,
     ppPortada: Portada,
     ppNuevas: Nuevas,
-    ppArticulos: Articulos
+    ppArticulos: Articulos,
+    ppNewArticle: NewArticle,
   }
 }
 </script>
