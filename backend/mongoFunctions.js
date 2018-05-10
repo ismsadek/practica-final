@@ -24,8 +24,8 @@ const articleSchema = mongoose.Schema({
     type: String,
     required: true
   },
-  id: {
-    type: Number,
+  topic: {
+    type: String,
     required: true
   },
   timeStamp: {
@@ -49,8 +49,8 @@ const newsSchema = mongoose.Schema({
     type: String,
     required: true
   },
-  id: {
-    type: Number,
+  topic: {
+    type: String,
     required: true
   },
   timeStamp: {
@@ -96,18 +96,27 @@ module.exports = {
      }
      });
    },
-   findDataById: function (id, author, title, content, timeStamp){ //Modify the data
+   findDataById: function (author, title, content, topic, timeStamp){ //Modify the data
      articleModel.findById(id, function(err, result) {
        if (err) throw err;
        if(result){
-         result.content = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum cumque ex, dolor facilis! Velit, non aliquid dolor dolorum iusto sapiente dolore voluptas nulla hic, tempora quam assumenda perferendis ducimus distinctio?";
-         result.author = "Ismael";
-         result.id = 2;
-         result.timeStamp = ;
+         result.author = author;
+         result.title = title
+         result.content = content;
+         result.topic = topic;
+         result.timeStamp = timeStamp;
          result.save();
        }
      });
-   }
+   },
+   removeData: function (id){
+    userModel.findByIdAndRemove(id, function(err, result) {
+      if (err) throw err;
+      if(result){
+        console.log("Usuario eliminado.");
+      }
+    });
+  }
  
 }
 
@@ -118,16 +127,9 @@ module.exports = {
 //
 
 
-//Eliminate data
+// Eliminate data
 
 // var id = '5af32a5bb6cdba0cfb7cb315'
-//
 
-function removeData(id){
-  userModel.findByIdAndRemove(id, function(err, result) {
-    if (err) throw err;
-    if(result){
-      console.log("Usuario eliminado.");
-  }
-  });
-}
+
+
