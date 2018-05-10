@@ -1,5 +1,6 @@
 <template>
-		<footer class="row general-footer">
+	<div class="container-fluid">
+		<div class="row general-footer">
 			<nav class="navbar navbar-toggleable">
 				<ul class="nav">
 					<li>
@@ -25,7 +26,8 @@
 					</li>
 				</ul>
 			</nav>
-		</footer>
+		</div>
+	</div>
 </template>
 
 <style>

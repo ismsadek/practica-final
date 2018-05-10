@@ -1,6 +1,6 @@
 <template>
 	<div class="container-fluid">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row header-top">
 				<div class="navbar col-sm-6 col-md-3">
 					<img src="" alt="">
@@ -15,7 +15,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="container">
+
+		<div class="container-fluid">
 			<div class="row header-bot">
 				<div class="navbar col-sm-11 col-md-7">
 					<button><a href="">PUBLICAR</a></button>
