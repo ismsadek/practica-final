@@ -41,35 +41,50 @@ let userModel = mongoose.model('User', articleSchema);
 // insertData('text', 'Isma', 2)
 
 
- // Retrieve data
-userModel.find(function (err, result) {
-  if (err) return console.error(err);
-  if(result){
-    console.log(result);
-}
-});
 
-//Modify the data
+
+
+
+module.exports = {
+   showData: function(){  // Retrieve data
+     userModel.find(function (err, result) {
+       if (err) return console.error(err);
+       if(result){
+         console.log(result);
+     }
+     });
+   },
+   findDataById: function (id, text, name, id){ //Modify the data
+     userModel.findById(id, function(err, result) {
+       if (err) throw err;
+       if(result){
+         result.text = "Paco";
+         result.user = '33';
+         result.id= 2;
+         result.save();
+       }
+     });
+   }
+
+}
+
+
+
 
 // var id = '5af32ac0469b4e0d1338b5ff'
 //
-// userModel.findById(id, function(err, result) {
-//   if (err) throw err;
-//   if(result){
-//     result.text = "Paco";
-//     result.user = '33';
-//     result.id= 2;
-//     result.save();
-//   }
-// });
+
 
 //Eliminate data
 
 // var id = '5af32a5bb6cdba0cfb7cb315'
 //
-// userModel.findByIdAndRemove(id, function(err, result) {
-//   if (err) throw err;
-//   if(result){
-//     console.log("Usuario eliminado.");
-// }
-// });
+
+function removeData(id){
+  userModel.findByIdAndRemove(id, function(err, result) {
+    if (err) throw err;
+    if(result){
+      console.log("Usuario eliminado.");
+  }
+  });
+}
