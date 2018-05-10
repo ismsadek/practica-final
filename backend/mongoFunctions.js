@@ -50,11 +50,7 @@ const newsSchema = mongoose.Schema({
     required: true
   },
   topic: {
-// <<<<<<< HEAD
     type: String,
-=======
-    type: Number,
-// >>>>>>> 53b031f2ef94aea6c0c68135e38614d8dbfd60fb
     required: true
   },
   timeStamp: {
@@ -75,24 +71,8 @@ let articleModel = mongoose.model('Article', articleSchema);
 // definicion del modelo de dato de nuevos articulos
 let newsModel = mongoose.model('News', newsSchema);
 
-// // //insert data
-// function insertData(iAuthor, iTitle, iContent, ){
-// let user = new userModel({author: iAuthor, title: ititle, content: icontent});
-// user.save(function(err) {
-//   if (err) throw err;
-//   console.log('Nuevo usuario guardado.');
-// });
-// }
-//
-// insertData('text', 'Isma', 2)
-
-
-
-
-
 
 module.exports = {
-// <<<<<<< HEAD
    showData: function(){  // Retrieve data
      articleModel.find(function (err, result) {
        if (err) return console.error(err);
@@ -101,59 +81,33 @@ module.exports = {
      }
      });
    },
-   findDataById: function (author, title, content, topic, timeStamp){ //Modify the data
+   newArticle: function(iAuthor, iTitle, iContent, iTopic, iTimeStamp){  // Retrieve data
+     let user = new articleModel({author: iAuthor, title: iTitle, content: iContent, topic:iTopic, timeStamp: iTimeStamp});
+     user.save(function(err) {
+       if (err) throw err;
+       console.log('Nuevo usuario guardado.');
+     });
+   },
+   modifyArticleById: function (id, iAuthor, iTitle, iContent, iTopic, iTimeStamp){ //Modify the data
      articleModel.findById(id, function(err, result) {
        if (err) throw err;
        if(result){
-         result.author = author;
-         result.title = title
-         result.content = content;
-         result.topic = topic;
-         result.timeStamp = timeStamp;
+         result.author = iAuthor;
+         result.title = iTitle
+         result.content = iContent;
+         result.topic = iTopic;
+         result.timeStamp = iTimeStamp;
          result.save();
+         console.log(result);
        }
      });
    },
-   removeData: function (id){
-    userModel.findByIdAndRemove(id, function(err, result) {
+   removeArticleById: function (id){
+    articleModel.findByIdAndRemove(id, function(err, result) {
       if (err) throw err;
       if(result){
         console.log("Usuario eliminado.");
       }
     });
   }
- 
-
-   newArticle: function(iAuthor, iTitle, iContent, iTopic, iTimeStamp){  // Retrieve data
-     let user = new articleModel({author: iAuthor, title: ititle, content: icontent, topic:iTopic, timeStamp: iTimeStamp});
-     user.save(function(err) {
-       if (err) throw err;
-       console.log('Nuevo usuario guardado.');
-     });
-   },
 }
-
-
-
-
-// var id = '5af32ac0469b4e0d1338b5ff'
-//
-
-
-// Eliminate data
-
-// var id = '5af32a5bb6cdba0cfb7cb315'
-
-// <<<<<<< HEAD
-
-
-// =======
-// // function removeData(id){
-// //   userModel.findByIdAndRemove(id, function(err, result) {
-// //     if (err) throw err;
-// //     if(result){
-// //       console.log("Usuario eliminado.");
-// //   }
-// //   });
-// // }
-// >>>>>>> 53b031f2ef94aea6c0c68135e38614d8dbfd60fb
